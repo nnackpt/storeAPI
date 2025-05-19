@@ -1,4 +1,5 @@
 @StoreAPI_HostAddress = http://localhost:5184/api
+@StoreAPI_AccessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibmFjayIsImp0aSI6IjJhOWM1Njg3LWI4NjktNDJjNi1iOWUzLWI4M2M0MmNhZGFhZSIsImV4cCI6MTc0NzcyNzMzMSwiaXNzIjoiKiIsImF1ZCI6IioifQ.m5fPdEPN45g138ga0zt9uAkCuuRGqvdyn5uM7Rdly50
 
 // Test connection to the StoreAPI
 GET {{StoreAPI_HostAddress}}/Product/testconnectdb
@@ -9,6 +10,7 @@ Accept: application/json
 // Get all products
 GET {{StoreAPI_HostAddress}}/Product
 Accept: application/json
+Authorization: Bearer {{StoreAPI_AccessToken}}
 
 ###
 

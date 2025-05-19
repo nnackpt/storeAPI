@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StoreAPI.Data;
 using StoreAPI.Models;
 
 namespace StoreAPI.Controllers;
 
+//[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ProductController : ControllerBase
@@ -31,6 +33,7 @@ public class ProductController : ControllerBase
         }
     }
 
+    [Authorize]
     // Get all products
     [HttpGet]
     public ActionResult<product> GetProducts()
