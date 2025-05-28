@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StoreAPI.Models;
 
-public partial class category
+public partial class category //
 {
     public int category_id { get; set; }
 

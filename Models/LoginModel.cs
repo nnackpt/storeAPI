@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StoreAPI.Models;
 
-public class LoginModel
+public class LoginModel //
 {
     [Required(ErrorMessage = "User Name is required")]
     public string? Username { get; set; }

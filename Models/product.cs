@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StoreAPI.Models;
 
-public partial class product
+public partial class product //
 {
     public int product_id { get; set; }
 
