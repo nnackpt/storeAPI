@@ -7,7 +7,7 @@ namespace StoreAPI.Migrations
     /// <inheritdoc />
     public partial class auth : Migration
     {
-        /// <inheritdoc />
+        /// <inheritdoc /> /
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<decimal>(

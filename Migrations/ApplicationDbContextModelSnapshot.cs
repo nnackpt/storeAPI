@@ -8,7 +8,7 @@ using StoreAPI.Data;
 
 #nullable disable
 
-namespace StoreAPI.Migrations
+namespace StoreAPI.Migrations //
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot

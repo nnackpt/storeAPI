@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using StoreAPI.Data;
 
 #nullable disable
-
+//
 namespace StoreAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]

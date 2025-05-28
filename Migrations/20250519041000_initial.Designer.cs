@@ -15,7 +15,7 @@ namespace StoreAPI.Migrations
     [Migration("20250519041000_initial")]
     partial class initial
     {
-        /// <inheritdoc />
+        /// <inheritdoc /> /
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
