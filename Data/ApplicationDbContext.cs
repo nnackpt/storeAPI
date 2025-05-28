@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using StoreAPI.Models;
 
 namespace StoreAPI.Data;
-
 public partial class ApplicationDbContext : IdentityDbContext<IdentityUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -18,6 +17,7 @@ public partial class ApplicationDbContext : IdentityDbContext<IdentityUser>
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // เพิ่มส่วนนี้เข้าไป
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<category>(entity =>
