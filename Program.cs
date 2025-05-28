@@ -40,6 +40,20 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddDefaultPolicy(
+            policy =>
+            {
+                policy.AllowAnyOrigin();
+                policy.AllowAnyMethod();
+                policy.AllowAnyHeader();
+            }
+        );
+    }
+);
+
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 //builder.Services.AddOpenApi();
@@ -65,6 +79,7 @@ builder.Services.AddSwaggerGen(opt =>
             Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below. \r\n\r\nExample: \"Bearer 12345abcdef\"",
         });
 
+        // Add the Bearer token
         opt.AddSecurityRequirement(new OpenApiSecurityRequirement
         {
             {
@@ -86,24 +101,23 @@ builder.Services.AddSwaggerGen(opt =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseCors(options =>
-{
-    options.AllowAnyOrigin();
-    options.AllowAnyHeader();
-    options.AllowAnyMethod();
-});
-
 app.UseStaticFiles();
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
+app.UseCors();
 
 app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();
